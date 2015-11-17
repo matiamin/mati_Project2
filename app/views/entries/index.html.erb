@@ -1,0 +1,31 @@
+<h1>Scholarships</h1>
+
+  <table>
+  <tr>
+    <th>Title</th>
+    <th>Deadline</th>
+    <th>Institute</th>
+    <th>Country</th>
+    <th>Website</th>
+    <th>Description</th>
+    <th colspan="1"></th>
+  </tr>
+
+  <% @entries.each do |entry|%>
+  <tr>
+    <td><%=entry.title%></td>
+    <td><%=entry.deadline%></td>
+    <td><%=entry.institute%></td>
+    <td><%=entry.country%></td>
+    <td><%=entry.website%></td>
+    <td><%=entry.description%></td>
+    <!-- #creating 'show' and 'edit' functionalities -->
+    <td><%= link_to 'Show', entry_path(entry)%></td>
+    <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
+    <td><%= link_to 'Delete', entry_path(entry),
+            method: :delete %></td>
+  </tr>
+    <% end%>
+</table>
+
+  <%= link_to 'New Entry', new_entry_path%>
