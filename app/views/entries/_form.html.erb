@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
- <%= f.collection_select :category_id, Category.all, :id, :name %><br>
+ <p><%= f.collection_select :category_id, Category.all, :id, :name %></p>
 
 <p>
   <%= f.label :title%> <br>

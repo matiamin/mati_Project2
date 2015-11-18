@@ -7,8 +7,16 @@ def set_post
 end
 
 def index
-  # authenticate_user!
-  @entries = Entry.all
+
+  if (params[:filter])
+    category = Category.find(params[:filter][:category_id])
+    @entries = category.entries
+  else
+    @entries = Entry.all
+  end
+  @entries = @entries.order('created_at DESC')
+
+  @categories = Category.all
 end
 
 def show
