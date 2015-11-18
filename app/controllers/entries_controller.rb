@@ -24,10 +24,8 @@ def edit
 end
 
 def create
-
   @entry = Entry.new(entry_params)
   @entry.user = current_user
-   
 
   if @entry.save
     redirect_to @entry
