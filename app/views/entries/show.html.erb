@@ -28,4 +28,10 @@
   <%= @entry.country %>
 </p>
 
+<p>
+  <strong> Author </strong>
+  <%= link_to @entry.user.first_name, user_path(@entry.user) %>
+</p>
+
+
 <%= link_to 'Back', entries_path%>
