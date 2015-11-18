@@ -54,8 +54,7 @@ end
 
 private
   def entry_params
-    params.require(:entry).permit(:title, :deadline, :description, :institute, :website, :country)
+    params.require(:entry).permit(:title, :deadline, :description, :institute, :website, :country, :category_id)
   end
-
 
 end

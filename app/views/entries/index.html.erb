@@ -17,8 +17,9 @@
     <td><%=entry.deadline%></td>
     <td><%=entry.institute%></td>
     <td><%=entry.country%></td>
-    <td><%=entry.website%></td>
+    <td><a href="<%=entry.website %>"> Link </a></td>
     <td><%=entry.description%></td>
+
     <!-- #creating 'show' and 'edit' functionalities -->
     <td><%= link_to 'Show', entry_path(entry)%></td>
     <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
