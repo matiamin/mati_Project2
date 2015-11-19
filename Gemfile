@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+gem 'cancancan', '~> 1.10'
 gem 'carmen-rails'
 gem 'devise'
 gem 'mail_form'

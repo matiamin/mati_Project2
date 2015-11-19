@@ -15,7 +15,7 @@
 
 <button><%= link_to 'New Entry', new_entry_path%></button>
 
-  <table>
+<table>
   <tr>
     <th>Title</th>
     <th>Deadline</th>
@@ -24,21 +24,30 @@
     <th>Website</th>
     <th>Description</th>
 
-<% @entries.each do |entry|%>
-<tr>
-  <td><%=entry.title%></td>
-  <td><%=entry.deadline%></td>
-  <td><%=entry.institute%></td>
-  <td><%=entry.country%></td>
-  <td><a href="<%=entry.website %>"> Link </a></td>
-  <td><%=entry.description%></td>
-  <%= entry.created_at.strftime("%B, %d, %Y") %>
+    # categories
+    <% @categories.each do |category| %>
+    <ul>
+      <%= link_to category.name, user_path(current_user, filter: {category_id: category}) %>
+    </ul>
+    <% end %>
+    #end
+
+    <% @entries.each do |entry|%>
+    <tr>
+      <td><%=entry.title%></td>
+      <td><%=entry.deadline%></td>
+      <td><%=entry.institute%></td>
+      <td><%=entry.country%></td>
+      <td><a href="<%=entry.website %>"> Link </a></td>
+      <td><%=entry.description%></td>
+      <%= entry.created_at.strftime("%B, %d, %Y") %>
 
 
-  <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
-  <td><%= link_to 'Delete', entry_path(entry),
-          method: :delete %></td>
+      <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
+      <td><%= link_to 'Delete', entry_path(entry),
+      method: :delete %></td>
 
-  <% end %>
+      <% end %>
 
-<%= link_to 'Back', entries_path%>
+      <%= link_to 'Back', entries_path%>
+      <%= will_paginate @entries, renderer: BootstrapPagination::Rails %>

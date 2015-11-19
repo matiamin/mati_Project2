@@ -2,7 +2,7 @@
 
 <button><%= link_to 'New Entry', new_entry_path%></button>
 
-  <table>
+<table>
   <tr>
     <th>Title</th>
     <th>Deadline</th>
@@ -11,11 +11,11 @@
     <th>Website</th>
     <th>Description</th>
 
-  <% @categories.each do |category| %>
+    <% @categories.each do |category| %>
     <ul>
       <%= link_to category.name, entries_path(filter: {category_id: category}) %>
     </ul>
-  <% end %>
+    <% end %>
 
     <th colspan="1"></th>
   </tr>
@@ -35,10 +35,12 @@
     <!-- <td><%= link_to 'Show', entry_path(entry)%></td> -->
 
     <%= link_to entry.user.first_name, user_path(entry.user) %>
-
+    <td><%= link_to 'View', entry_path(entry)%></td>
     <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
     <td><%= link_to 'Delete', entry_path(entry),
-            method: :delete %></td>
+    method: :delete %></td>
   </tr>
-    <% end%>
+  <% end%>
 </table>
+
+<%= will_paginate @entries, renderer: BootstrapPagination::Rails %>
