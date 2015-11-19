@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem "cancan"
 gem 'carmen-rails'
 gem 'devise'
 gem 'mail_form'
