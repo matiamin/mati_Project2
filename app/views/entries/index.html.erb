@@ -31,7 +31,10 @@
     <%= entry.created_at.strftime("%B, %d, %Y") %>
 
     <!-- #creating 'show' and 'edit' functionalities -->
-    <td><%= link_to 'Show', entry_path(entry)%></td>
+    <!-- <td><%= link_to 'Show', entry_path(entry)%></td> -->
+
+    <%= link_to entry.user.first_name, user_path(entry.user) %>
+
     <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
     <td><%= link_to 'Delete', entry_path(entry),
             method: :delete %></td>

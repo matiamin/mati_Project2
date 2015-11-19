@@ -10,6 +10,7 @@
 
 <div class = "homepage">
 <body>
+
   <% if current_user %>
     <button><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></button>
   <% else %>
