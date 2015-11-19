@@ -42,6 +42,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.0)
+    cancan (1.6.10)
     carmen (1.0.2)
       activesupport (>= 3.0.0)
     carmen-rails (1.0.1)
@@ -158,6 +159,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cancan
   carmen-rails
   coffee-rails (~> 4.1.0)
   devise

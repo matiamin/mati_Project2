@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= link_to 'Home', entries_path%>
   <title>Scholarz</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,6 +19,8 @@
   <div class = "wrapper">
 <%= yield %>
   </div>
+  <div><%= link_to 'About', page_about_path%></div>
+  <div><%= link_to 'policy', page_policy_path%></div>
 </body>
 </div>
 
