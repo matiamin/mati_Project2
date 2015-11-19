@@ -34,11 +34,11 @@
   <td><%=entry.description%></td>
   <%= entry.created_at.strftime("%B, %d, %Y") %>
 
+
   <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
   <td><%= link_to 'Delete', entry_path(entry),
           method: :delete %></td>
 
   <% end %>
-
 
 <%= link_to 'Back', entries_path%>
