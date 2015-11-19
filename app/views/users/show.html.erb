@@ -1,1 +1,18 @@
-User's show page
+<h1>Profile</h1>
+
+
+<p>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <%= @user.about %>
+</p>
+
+<%= @entries.user%>
+
+<%= link_to 'Back', entries_path%>

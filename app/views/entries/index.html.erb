@@ -1,5 +1,7 @@
 <h1>Scholarships</h1>
 
+<button><%= link_to 'New Entry', new_entry_path%></button>
+
   <table>
   <tr>
     <th>Title</th>
@@ -26,6 +28,7 @@
     <td><%=entry.country%></td>
     <td><a href="<%=entry.website %>"> Link </a></td>
     <td><%=entry.description%></td>
+    <%= entry.created_at.strftime("%B, %d, %Y") %>
 
     <!-- #creating 'show' and 'edit' functionalities -->
     <td><%= link_to 'Show', entry_path(entry)%></td>
@@ -35,5 +38,3 @@
   </tr>
     <% end%>
 </table>
-
-  <%= link_to 'New Entry', new_entry_path%>
