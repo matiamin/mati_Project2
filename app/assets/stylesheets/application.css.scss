@@ -1,2 +1,77 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after{
+  clear:both;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  margin: auto;
+}
+
+.entry:hover {
+  color: #FFFF66;
+}
+
+.heading {
+  color: #484848;
+}
+
+.container {
+  margin-left: 15px;
+}
+
+.entries {
+  width: 300px;
+  height: 300px;
+}
+
+.login {
+  margin: auto;
+  text-align: center;
+  margin-top: 70px;
+  color:#484848;
+}
+
+.signup {
+  margin: auto;
+  text-align: center;
+  margin-top: 70px;
+  color:#484848;
+}
+
+.update {
+  margin: auto;
+  text-align: center;
+  margin-top: 70px;
+  color:#484848;
+}
+
+.forgot {
+  margin: auto;
+  text-align: center;
+  margin-top: 70px;
+  color:#484848;
+}
+
+.contact {
+  margin: auto;
+  text-align: center;
+  margin-top: 70px;
+  color:#484848;
+}

@@ -16,17 +16,17 @@
 <div class = "form">
 
 <div class = title>
-  <%= f.text_field :title, :placeholder => "Title"%>
+  <%= f.text_field :title, :placeholder => "Title"%> length: { maximum: 100}
 </div>
 
 
 <div class= institute>
   <!-- <%= f.label :Institute%> <br> -->
-  <%= f.text_field :institute, :placeholder => "Institute"%>
+  <%= f.text_field :institute, :placeholder => "Institute"%> length: { maximum: 100}
 </div>
 
 <div class= website>
-<%= f.text_field :website, :placeholder => "Link"%>
+<%= f.text_field :website, :placeholder => "Link"%> length: { maximum: 100}
 </div>
 
 <!-- #The drop-down option for selecting country -->
@@ -35,7 +35,7 @@
 </div>
 
 <div class= description>
-  <%= f.text_area :description, :placeholder => "Description"%>
+  <%= f.text_area :description, :placeholder => "Description"%> length: { maximum: 250}
 </div>
 
 <div class= deadline>

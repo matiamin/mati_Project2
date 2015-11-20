@@ -20,11 +20,11 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-        <li><%= link_to "Update Profile", edit_user_registration_path%></li>
-        <li><%= link_to "Signout", destroy_user_session_path, :method => :delete %></li>
+        <button type="button" class="btn btn-lg btn-default"><%= link_to "Update Profile", edit_user_registration_path%></button>
+        <button type="button" class="btn btn-lg btn-default"><%= link_to "Signout", destroy_user_session_path, :method => :delete %></button>
         <% else %>
-        <%= link_to 'Signup', new_user_registration_path %>
-        <%= link_to 'Login', new_user_session_path %>
+        <button type="button" class="btn btn-lg btn-default"><%= link_to 'Signup', new_user_registration_path %></button>
+        <button type="button" class="btn btn-lg btn-default"><%= link_to 'Login', new_user_session_path %></button>
         <%end%>
       </ul>
 
