@@ -14,29 +14,58 @@
  *= require_self
  */
 .homepage {
-  background:white ;
   margin: auto;
   width: 800px;
   margin-top: 100px;
   border-radius: 10px;
-  height: 600px;
+  height: 800px;
 
 }
 
 body {
-  background: #F5F5DC;
+  background: #F0F0F0;
   color: black;
 }
 
 .wrapper {
   width:800px;
+  align-self: auto;
   margin-left: 20px;
 }
 
-button {
-  background-color: pink;
-  border-radius: 5px;
+.signout {
+  background-color:#FF3333;
+  border-radius: 3px;
+  border-color:#FF3333;
+  margin: auto;
+  position: relative;
+  left: 600px;
+  width: 80px;
+  height: 30px;
+  font-size:15px;
+  font-style: normal;
+  font-family: sans-serif;
 
+}
+
+.update_profile{
+  border-radius: 5px;
+  border-color:#F0F0F0;
+  width: 130px;
+  position: relative;
+  right: 70px;
+  margin: auto;
+  height: 30px;
+  font-size:15px;
+  font-style: normal;
+  font-family: sans-serif;
+
+}
+
+.update_profile:hover{
+  background-color:#009933;
+  border-color:#009933;
+  color: white;
 }
 
 .alert-error {
@@ -46,23 +75,47 @@ color: #b94a48;
 text-align: left;
 }
 
-.alert-alert {
-background-color: #f2dede;
-border-color: #eed3d7;
-color: #b94a48;
-text-align: left;
+.form {
+width: 600px;
+height: 300px;
+margin: auto;
 }
 
-.alert-success {
-background-color: #dff0d8;
-border-color: #d6e9c6;
-color: #468847;
-text-align: left;
+.title {
+  margin-left: auto;
 }
 
-.alert-notice {
-background-color: #dff0d8;
-border-color: #d6e9c6;
-color: #468847;
-text-align: left;
+.footer {
+  margin: auto;
+}
+.about {
+  margin: auto;
+  width: 50px;
+  position: relative;
+  left: 0px;
+  padding: 0;
+  text-align: center;
+}
+
+.policy {
+  margin:auto;
+  width: 130px;
+  position: relative;
+  top: 1px;
+  left: 80px;
+  text-align: center;
+
+}
+
+.contact {
+  margin: auto;
+  width: 130px;
+  position: relative;
+  right: 100px;
+  text-align: center;
+
+}
+
+a {
+  text-decoration: none;
 }
