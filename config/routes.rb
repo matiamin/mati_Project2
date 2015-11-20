@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'page/about'
-
   get 'page/policy'
 
   match '/contacts',     to: 'contacts#new',             via: 'get'

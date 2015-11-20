@@ -1,33 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= link_to 'Home', entries_path%>
   <title>Scholarz</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
-<div class = "homepage">
-  <body>
+<body>
 
-    <% if current_user %>
-    <button class = "signout"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></button>
-    <button class = "update_profile"><%= link_to 'Update Profile', edit_user_registration_path%></button>
-
-    <% else %>
-    <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-    <h3><%= link_to 'Login', new_user_session_path %></h3>
-    <% end %>
-    <div class = "wrapper">
-      <%= yield %>
-    </div>
-    <div class = "footer">
-      <div class = "about"><%= link_to 'About', page_about_path%></div>
-      <div class = "policy"><%= link_to 'policy', page_policy_path%></div>
-      <div class = "contact"><%= link_to 'Contact', contacts_path%></div>
-    </div>
-  </body>
-</div>
+  <%= render 'shared/navbar'%>
+  <%= yield %>
+</body>
 
 </html>
