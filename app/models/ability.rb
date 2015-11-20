@@ -2,8 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :read, Entry
 
-    can [:update, :destroy] Entry do |entry|
-      entry.user == user
-    end
+  if user
+      can :create, Entry
+      can [:update, :destroy], Entry, :user => user
   end
+  end
+end

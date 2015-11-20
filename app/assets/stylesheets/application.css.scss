@@ -24,10 +24,6 @@ button {
   margin: auto;
 }
 
-.entry:hover {
-  color: #FFFF66;
-}
-
 .heading {
   color: #484848;
 }
@@ -70,6 +66,20 @@ button {
 }
 
 .contact {
+  margin: auto;
+  text-align: center;
+  margin-top: 70px;
+  color:#484848;
+}
+
+.newentry {
+  margin: auto;
+  text-align: center;
+  margin-top: 70px;
+  color:#484848;
+}
+
+.editentry {
   margin: auto;
   text-align: center;
   margin-top: 70px;

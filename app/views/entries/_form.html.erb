@@ -1,47 +1,54 @@
+<div class = "entry">
 <%= form_for @entry do |f|%>
 
 <% if @entry.errors.any? %>
-    <div id="error_explanation">
+<div id="error_explanation">
 
-      <ul>
-        <% @entry.errors.full_messages.each do |msg| %>
-          <p><%= msg %></p>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @entry.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
- <p><%= f.collection_select :category_id, Category.all, :id, :name %></p>
+<p><%= f.collection_select :category_id, Category.all, :id, :name %></p>
+<br />
 
 <div class = "form">
 
-<div class = title>
-  <%= f.text_field :title, :placeholder => "Title"%> length: { maximum: 100}
-</div>
+  <div class = title>
+    <%= f.text_field :title, :placeholder => "Title"%>
+  </div>
+  <br />
 
+  <div class= institute>
+    <!-- <%= f.label :Institute%> <br> -->
+    <%= f.text_field :institute, :placeholder => "Institute"%>
+  </div>
+  <br />
 
-<div class= institute>
-  <!-- <%= f.label :Institute%> <br> -->
-  <%= f.text_field :institute, :placeholder => "Institute"%> length: { maximum: 100}
-</div>
+  <div class= website>
+    <%= f.text_field :website, :placeholder => "Link"%>
+  </div>
+  <br />
 
-<div class= website>
-<%= f.text_field :website, :placeholder => "Link"%> length: { maximum: 100}
-</div>
+  <!-- #The drop-down option for selecting country -->
+  <div class= country>
+    <%= f.country_select :country, {priority: %w(US CA), prompt: 'Select Country'}%>
+  </div>
+  <br />
 
-<!-- #The drop-down option for selecting country -->
-<div class= country>
-  <%= f.country_select :country, {priority: %w(US CA), prompt: 'Select Country'}%>
-</div>
+  <div class= description>
+    <%= f.text_area :description, :placeholder => "Description"%>
+  </div>
+  <br />
 
-<div class= description>
-  <%= f.text_area :description, :placeholder => "Description"%> length: { maximum: 250}
-</div>
-
-<div class= deadline>
-  <%= f.label :deadline%> <br>
-  <%= f.date_field :deadline, :value => "deadline"%>
-</div>
+  <div class= deadline>
+    <%= f.label :deadline%> <br>
+    <%= f.date_field :deadline, :value => "deadline"%>
+  </div>
+  <br />
 
 </div>
 
@@ -50,3 +57,4 @@
 </p>
 
 <%end%>
+</div>

@@ -1,6 +1,9 @@
-<h1>New Entry</h1>
-<%= form_for :entry, url: entries_path do |f|%>
-<%end%>
-<%=render 'form'%>
+<div class = "newentry">
+  <h1>New Entry</h1>
+  <br />
+  <%= form_for :entry, url: entries_path do |f|%>
+  <%end%>
+  <%=render 'form'%>
 
-<%= link_to 'Back', entries_path%>
+  <%= link_to 'Back', entries_path%>
+</div>

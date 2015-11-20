@@ -3,6 +3,8 @@ class EntriesController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
+  load_and_authorize_resource
+
   def set_post
   end
 
@@ -29,7 +31,6 @@ class EntriesController < ApplicationController
 
   def edit
     @entry = Entry.find(params[:id])
-    authorize! :update, @entry
 
   end
 
@@ -46,7 +47,6 @@ class EntriesController < ApplicationController
 
   def update
     @entry = Entry.find(params[:id])
-    authorize! :update, @entry
     if @entry.update(entry_params)
       redirect_to @entry
     else
