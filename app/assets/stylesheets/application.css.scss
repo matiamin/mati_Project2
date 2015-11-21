@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
@@ -9,6 +8,11 @@
 
 .clearfix:after{
   clear:both;
+}
+
+.categories {
+  position: relative;
+  display: block;
 }
 
 a {
@@ -29,12 +33,14 @@ button {
 }
 
 .container {
-  margin-left: 15px;
+  border-color: black;
+  // margin-left: 15px;
 }
 
 .entries {
-  width: 300px;
+  width: 850px;
   height: 300px;
+  border-bottom: 1px solid #E3E3E3;
 }
 
 .login {
@@ -84,4 +90,24 @@ button {
   text-align: center;
   margin-top: 70px;
   color:#484848;
+}
+
+.table {
+  text-align: center;
+  border-spacing: 0.5rem;
+  width: 400px;
+  td {
+    font-size: 18px;
+    width: 200px;
+  }
+
+}
+
+tr {
+  padding: 10px;
+  font-size: 12px;
+  width: 120px;
+}
+.paginate {
+  text-align: center;
 }

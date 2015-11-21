@@ -16,7 +16,7 @@ class EntriesController < ApplicationController
     else
       @entries = Entry.all
     end
-    @entries = @entries.order('created_at DESC').paginate(:page => params[:page], :per_page => 2)
+    @entries = @entries.order('created_at DESC').paginate(:page => params[:page], :per_page => 3)
 
     @categories = Category.all
   end
