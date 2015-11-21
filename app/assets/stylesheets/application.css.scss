@@ -1,18 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table;
-}
 
-.clearfix:after{
-  clear:both;
-}
 
 .categories {
   position: relative;
   display: block;
+  border-bottom: 1px solid #E3E3E3;
 }
 
 a {
@@ -39,7 +33,30 @@ button {
 
 .entries {
   width: 850px;
-  height: 300px;
+  height: 350px;
+  td {
+    font-size: 14px;
+    padding: 1px;
+    margin-left: 20px;
+  }
+}
+
+.title {
+    width: 850px;
+    border-bottom: 2px solid #E3E3E3;
+    border-top: 2px solid #E3E3E3;
+    th {
+      font-size: 15px;
+      padding: 1px;
+      margin-left:20px;
+      font-family:monospace;
+    }
+}
+
+.author {
+  td {
+    font-size: 12px;
+  }
   border-bottom: 1px solid #E3E3E3;
 }
 
@@ -110,4 +127,6 @@ tr {
 }
 .paginate {
   text-align: center;
+  position: relative;
+  top: 150px;
 }

@@ -13,41 +13,52 @@
     </tr>
   </table>
 
+  <table class = "title">
+    <tr>
+      <th>Title</th>
+      <th>Deadline</th>
+      <th>Institute</th>
+      <th>Country</th>
+      <th>Website</th>
+      <th>Description</th>
+    </tr>
+  </table>
+
   <table class = "entries">
 
     <tr>
-        <% @entries.each do |entry|%>
-        <td><%=entry.title%></td>
-        <td><%=entry.deadline%></td>
-        <td><%=entry.institute%></td>
-        <td><%=entry.country%></td>
-        <td><a href="<%=entry.website %>"> Link </a></td>
-        <td><%=entry.description%></td>
+      <% @entries.each do |entry|%>
+      <td><%=entry.title%></td>
+      <td><%=entry.deadline%></td>
+      <td><%=entry.institute%></td>
+      <td><%=entry.country%></td>
+      <td><a href="<%=entry.website %>"> Link </a></td>
+      <td><%=entry.description%></td>
 
 
-        <td><%= link_to 'View', entry_path(entry)%></td>
+      <td><%= link_to 'View', entry_path(entry)%></td>
 
-        <td><% if can? :edit, entry %>
-          <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
-          <%end%>
-        </td>
+      <td><% if can? :edit, entry %>
+        <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
+        <%end%>
+      </td>
 
-        <td><% if can? :destroy, entry %>
-          <td><%= link_to 'Delete', entry_path(entry),
-          method: :delete %>
-          <% end%>
-        </td>
-      </tr>
+      <td><% if can? :destroy, entry %>
+        <td><%= link_to 'Delete', entry_path(entry),
+        method: :delete %>
+        <% end%>
+      </td>
+    </tr>
 
-      <tr>
-        <td>
-          <%= entry.created_at.strftime("%B, %d, %Y") %>
-          <%=link_to entry.user.first_name, user_path(entry.user)%>
-        </td>
-      </tr>
+    <tr class = "author">
+      <td>
+        <%= entry.created_at.strftime("%B, %d, %Y") %> <br />
+        <%=link_to entry.user.first_name, user_path(entry.user)%>
+      </td>
+    </tr>
 
-      <%end%>
-    </table>
-    </div>
+    <%end%>
+  </table>
+</div>
 
-    <div class ="paginate"><%= will_paginate @entries, renderer: BootstrapPagination::Rails %></div>
+<div class ="paginate"><%= will_paginate @entries, renderer: BootstrapPagination::Rails %></div>

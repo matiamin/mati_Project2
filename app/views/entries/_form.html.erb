@@ -18,32 +18,27 @@
 <div class = "form">
 
   <div class = title>
-    <%= f.label :Title%> <br>
     <%= f.text_field :title, :placeholder => "Title"%>
   </div>
   <br />
 
   <div class= institute>
-    <%= f.label :Institute%> <br>
     <%= f.text_field :institute, :placeholder => "Institute"%>
   </div>
   <br />
 
   <div class= website>
-    <%= f.label :Link%> <br>
     <%= f.url_field :website, :placeholder => "Link"%>
   </div>
   <br />
 
   <!-- #The drop-down option for selecting country -->
   <div class= country>
-    <%= f.label :Country%> <br>
     <%= f.country_select :country, {priority: %w(US CA), prompt: 'Select Country'}%>
   </div>
   <br />
 
   <div class= description>
-    <%= f.label :Description%> <br>
     <%= f.text_area :description, :placeholder => "Description"%>
   </div>
   <br />
