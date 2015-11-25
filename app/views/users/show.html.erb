@@ -24,12 +24,14 @@
     <th>Website</th>
     <th>Description</th>
 
+    <!-- this should be above the header, right now this markup is broken  -->
     <% @categories.each do |category| %>
     <ul>
       <%= link_to category.name, user_path(current_user, filter: {category_id: category}) %>
     </ul>
     <% end %>
 
+    <!-- indentation here is broken -->
     <% @entries.each do |entry|%>
     <tr>
       <td><%=entry.title%></td>

@@ -1,6 +1,9 @@
 <div class = "editentry">
   <h1>Edit Entry</h1>
+  <!-- no br tags! use CSS instead -->
   <br />
+  <!-- this form for is broken, and not necessary since you have a form rendered
+      via the partial down below -->
   <%= form_for :entry, url: entries_path(@entry), method: :path do |f|%>
 
   <%end%>

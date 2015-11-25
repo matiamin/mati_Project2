@@ -1,3 +1,4 @@
+<!-- lots of indentation issues, this is very sloppy, and hard to read! -->
 <div class = "entry">
 <%= form_for @entry do |f|%>
 
@@ -15,8 +16,11 @@
 <p><%= f.collection_select :category_id, Category.all, :id, :name %></p>
 <br />
 
+<!-- form_for already puts a class on the form, so you can just style the whole thing -->
 <div class = "form">
 
+  <!-- this isn't valid HTML, it should be: -->
+  <!-- <div class='title'> -->
   <div class = title>
     <%= f.text_field :title, :placeholder => "Title"%>
   </div>

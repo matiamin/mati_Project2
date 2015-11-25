@@ -27,6 +27,8 @@
   <table class = "entries">
 
     <tr>
+      <!-- each entry should have it's own row, so this line below should be
+          ABOVE the TR row -->
       <% @entries.each do |entry|%>
       <td><%=entry.title%></td>
       <td><%=entry.deadline%></td>
@@ -35,7 +37,8 @@
       <td><a href="<%=entry.website %>"> Link </a></td>
       <td><%=entry.description%></td>
 
-
+      <!-- the number of cells (8) doesn't match the number of header cells, which
+          is why your layout looks broken for the index page  -->
       <td><%= link_to 'View', entry_path(entry)%></td>
 
       <td><% if can? :edit, entry %>
