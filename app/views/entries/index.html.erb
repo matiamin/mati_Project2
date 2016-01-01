@@ -1,9 +1,8 @@
 <div class = "container">
-  <h2 class = "heading">Scholarships</h2>
-  <div>
-    <button type="button" class="btn btn-default"><%= link_to 'New Entry', new_entry_path%></button>
-  </div>
-
+<h2 class="scholarships"> scholarships </h2>
+<div class="entry_button">
+  <button type="button" class="btn btn-default"><%= link_to 'New Entry', new_entry_path%></button>
+</div>
   <table class = "categories">
       <tr>
       <% @categories.each do |category| %>
