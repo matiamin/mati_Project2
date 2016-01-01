@@ -1,34 +1,37 @@
-<h1>Profile</h1>
+<div class = "container">
+  <h1>Profile</h1>
 
-<p>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <%= @user.first_name %>
+  </p>
 
-<p>
-  <%= @user.last_name %>
-</p>
+  <p>
+    <%= @user.last_name %>
+  </p>
 
-<p>
-  <%= @user.about %>
-</p>
+  <p>
+    <%= @user.about %>
+  </p>
 
 
-<button><%= link_to 'New Entry', new_entry_path%></button>
+  <button><%= link_to 'New Entry', new_entry_path%></button>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Deadline</th>
-    <th>Institute</th>
-    <th>Country</th>
-    <th>Website</th>
-    <th>Description</th>
+  <table>
 
     <% @categories.each do |category| %>
     <ul>
       <%= link_to category.name, user_path(current_user, filter: {category_id: category}) %>
     </ul>
     <% end %>
+
+    <tr class = "title">
+      <th>Title</th>
+      <th>Deadline</th>
+      <th>Institute</th>
+      <th>Country</th>
+      <th>Website</th>
+      <th>Description</th>
+    </tr>
 
     <% @entries.each do |entry|%>
     <tr>
@@ -38,7 +41,7 @@
       <td><%=entry.country%></td>
       <td><a href="<%=entry.website %>"> Link </a></td>
       <td><%=entry.description%></td>
-      <%= entry.created_at.strftime("%B, %d, %Y") %>
+      <td><%= entry.created_at.strftime("%B, %d, %Y") %></td>
 
 
       <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
@@ -46,6 +49,10 @@
       method: :delete %></td>
 
       <% end %>
+    </tr>
+  </table>
 
-      <%= link_to 'Back', entries_path%>
-      <%= will_paginate @entries, renderer: BootstrapPagination::Rails %>
+</div>
+
+<div class ="back"><%= link_to 'Back', entries_path%> </div></div>
+<div class ="paginate"><%= will_paginate @entries, renderer: BootstrapPagination::Rails %></div>

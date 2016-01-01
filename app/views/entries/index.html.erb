@@ -1,41 +1,36 @@
 <div class = "container">
   <h2 class = "heading">Scholarships</h2>
+  <div>
+    <button type="button" class="btn btn-default"><%= link_to 'New Entry', new_entry_path%></button>
+  </div>
 
-  <button type="button" class="btn btn-default"><%= link_to 'New Entry', new_entry_path%></button>
-
-  <table class = "categoies">
-    <tr>
+  <table class = "categories">
+      <tr>
       <% @categories.each do |category| %>
-      <ul>
-        <%= link_to category.name, entries_path(filter: {category_id: category}) %>
-      </ul>
-      <% end %>
-    </tr>
+        <td><%= link_to category.name, entries_path(filter: {category_id: category}) %></td>
+        <% end %>
+      </tr>
   </table>
 
-  <table class = "title">
-    <tr>
+  <table>
+    <tr class = "title">
       <th>Title</th>
       <th>Deadline</th>
       <th>Institute</th>
       <th>Country</th>
       <th>Website</th>
       <th>Description</th>
+      <th> Visit </th>
     </tr>
-  </table>
 
-  <table class = "entries">
-
-    <tr>
-      <% @entries.each do |entry|%>
+    <% @entries.each do |entry|%>
+    <tr class="body">
       <td><%=entry.title%></td>
       <td><%=entry.deadline%></td>
       <td><%=entry.institute%></td>
       <td><%=entry.country%></td>
       <td><a href="<%=entry.website %>"> Link </a></td>
       <td><%=entry.description%></td>
-
-
       <td><%= link_to 'View', entry_path(entry)%></td>
 
       <td><% if can? :edit, entry %>
@@ -48,13 +43,10 @@
         method: :delete %>
         <% end%>
       </td>
-    </tr>
-
-    <tr class = "author">
-      <td>
-        <%= entry.created_at.strftime("%B, %d, %Y") %> <br />
-        <%=link_to entry.user.first_name, user_path(entry.user)%>
-      </td>
+      <tr class= "author">
+        <td colspan="7"><%= entry.created_at.strftime("%B %d, %Y") %> </td><br />
+        <!-- <td><%=link_to entry.user.first_name, user_path(entry.user)%> </td> -->
+      </tr>
     </tr>
 
     <%end%>

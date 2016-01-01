@@ -4,9 +4,18 @@
 
 
 .categories {
-  position: relative;
-  display: block;
-  border-bottom: 1px solid #E3E3E3;
+  border-spacing: 12px;
+  border-collapse: separate;
+  margin: 35px 0 0 0;
+  td {
+    padding: 8px;
+    border: 1px solid #E3E3E3;
+    font-weight: bold;
+  }
+  td:hover {
+    background-color: yellow;
+    color: white;
+  }
 }
 
 a {
@@ -31,33 +40,40 @@ button {
   // margin-left: 15px;
 }
 
-.entries {
-  width: 850px;
-  height: 350px;
-  td {
-    font-size: 14px;
-    padding: 1px;
-    margin-left: 20px;
-  }
-}
-
 .title {
     width: 850px;
+    height: 40px;
     border-bottom: 2px solid #E3E3E3;
     border-top: 2px solid #E3E3E3;
     th {
-      font-size: 15px;
-      padding: 1px;
-      margin-left:20px;
+      font-size: 20px;
+      padding: 15px;
+      width: auto;
       font-family:monospace;
+      text-align: center;
+      color: white;
+      background-color: gray;
     }
+}
+.body {
+  height: 100px;
+  text-align: center;
+  font-size: 18px;
+  align-items: center;
+  td {
+    background-color: yellow;
+    padding:20 0 20px;
+    width: auto;
+  }
+
 }
 
 .author {
   td {
     font-size: 12px;
+    color: gray;
   }
-  border-bottom: 1px solid #E3E3E3;
+  border-bottom: 2px solid #E3E3E3;
 }
 
 .login {
@@ -120,13 +136,24 @@ button {
 
 }
 
-tr {
-  padding: 10px;
-  font-size: 12px;
-  width: 120px;
-}
+// tr {
+//   padding: 10px;
+//   font-size: 12px;
+//   width: 120px;
+// }
 .paginate {
   text-align: center;
   position: relative;
   top: 150px;
+}
+
+.back {
+  text-align: center;
+  position: relative;
+  top: 80px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 1px;
 }
