@@ -20,6 +20,8 @@
       <th>Website</th>
       <th>Description</th>
       <th> Visit </th>
+      <th></th>
+      <th></th>
     </tr>
 
     <% @entries.each do |entry|%>
@@ -43,13 +45,13 @@
         <% end%>
       </td>
       <tr class= "author">
-        <td colspan="7"><%= entry.created_at.strftime("%B %d, %Y") %> </td><br />
+        <td colspan="9"><%= entry.created_at.strftime("%B %d, %Y") %> </td><br />
         <!-- <td><%=link_to entry.user.first_name, user_path(entry.user)%> </td> -->
       </tr>
     </tr>
 
     <%end%>
   </table>
-</div>
 
 <div class ="paginate"><%= will_paginate @entries, renderer: BootstrapPagination::Rails %></div>
+</div>
