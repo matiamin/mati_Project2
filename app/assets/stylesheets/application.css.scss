@@ -1,3 +1,4 @@
+// don't delete the comments at the top of asset pipeline files (i.e. application.scss and application.js)
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -105,6 +106,15 @@ button {
     background-color: white;
   }
 }
+
+// lots of duplication here, you can remove it by doing:
+// .login, .signup, .update, .... {
+//   margin: auto;
+//   text-align: center;
+//   margin-top: 70px;
+//   color:#484848;
+// }
+
 
 .login {
   margin: auto;

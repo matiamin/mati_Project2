@@ -26,12 +26,15 @@
 
     <% @entries.each do |entry|%>
     <tr class="body">
+
       <td><%=entry.title%></td>
       <td><%=entry.deadline%></td>
       <td><%=entry.institute%></td>
       <td><%=entry.country%></td>
       <td><a href="<%=entry.website %>"> Link </a></td>
       <td><%=entry.description%></td>
+
+
       <td><%= link_to 'View', entry_path(entry)%></td>
 
       <td><% if can? :edit, entry %>

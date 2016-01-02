@@ -1,59 +1,63 @@
+<!-- lots of indentation issues, this is very sloppy, and hard to read! -->
 <div class = "entry">
-<%= form_for @entry do |f|%>
+  <%= form_for @entry do |f|%>
 
-<% if @entry.errors.any? %>
-<div id="error_explanation">
+  <% if @entry.errors.any? %>
+  <div id="error_explanation">
 
-  <ul>
-    <% @entry.errors.full_messages.each do |msg| %>
-    <p><%= msg %></p>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<p><%= f.collection_select :category_id, Category.all, :id, :name %></p>
-<br />
-
-<div class = "form">
-
-  <div class = title>
-    <%= f.text_field :title, :placeholder => "Title"%>
+    <ul>
+      <% @entry.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+      <% end %>
+    </ul>
   </div>
+  <% end %>
+
+  <p><%= f.collection_select :category_id, Category.all, :id, :name %></p>
   <br />
 
-  <div class= institute>
-    <%= f.text_field :institute, :placeholder => "Institute"%>
+  <!-- form_for already puts a class on the form, so you can just style the whole thing -->
+  <div class = "form">
+
+    <!-- this isn't valid HTML, it should be: -->
+    <!-- <div class='title'> -->
+    <div class = "title">
+      <%= f.text_field :title, :placeholder => "Title"%>
+    </div>
+    <br />
+
+    <div class= institute>
+      <%= f.text_field :institute, :placeholder => "Institute"%>
+    </div>
+    <br />
+
+    <div class= website>
+      <%= f.url_field :website, :placeholder => "Link"%>
+    </div>
+    <br />
+
+    <!-- #The drop-down option for selecting country -->
+    <div class= country>
+      <%= f.country_select :country, {priority: %w(US CA), prompt: 'Select Country'}%>
+    </div>
+    <br />
+
+    <div class= description>
+      <%= f.text_area :description, :placeholder => "Description"%>
+    </div>
+    <br />
+
+    <div class= deadline>
+      <%= f.label :deadline%> <br>
+      <%= f.date_field :deadline, :value => "deadline"%>
+    </div>
+    <br />
+
   </div>
-  <br />
 
-  <div class= website>
-    <%= f.url_field :website, :placeholder => "Link"%>
-  </div>
-  <br />
+  <p>
+    <%=f.submit%>
+  </p>
 
-  <!-- #The drop-down option for selecting country -->
-  <div class= country>
-    <%= f.country_select :country, {priority: %w(US CA), prompt: 'Select Country'}%>
-  </div>
-  <br />
-
-  <div class= description>
-    <%= f.text_area :description, :placeholder => "Description"%>
-  </div>
-  <br />
-
-  <div class= deadline>
-    <%= f.label :deadline%> <br>
-    <%= f.date_field :deadline, :value => "deadline"%>
-  </div>
-  <br />
-
-</div>
-
-<p>
-  <%=f.submit%>
-</p>
-
-<%end%>
+  <%end%>
 </div>

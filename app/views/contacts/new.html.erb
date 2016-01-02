@@ -3,6 +3,7 @@
   <br />
 
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+  <!-- these should all be indented one level-->
   <%= f.input :name, :required => true %>
   <br />
   <%= f.input :email, :required => true %>
@@ -11,6 +12,6 @@
   <div>
   </br>
   <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-</div>
+</div><!-- this indentation is all messed up... hard to read!  -->
 <% end %>
 </div>

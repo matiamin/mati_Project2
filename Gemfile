@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# I like how you put all of these at the top, separate from the stock gems
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'cancancan', '~> 1.10'
 gem 'carmen-rails'
@@ -21,6 +22,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# except maybe this one?
 gem 'will_paginate', '~> 3.0.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

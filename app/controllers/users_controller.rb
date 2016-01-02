@@ -5,10 +5,10 @@ class UsersController < ApplicationController
     @entries = @user.entries
 
 
-    if (params[:filter])
+    if (params[:filter]) # you have two lines of whitespace above, only 1 is standard
       category = Category.find(params[:filter][:category_id])
       # @entries = category.entries
-      @entries = current_user.entries.where(category: category)
+      @entries = current_user.entries.where(category: category) # nice!
     else
       @entries = Entry.all
     end

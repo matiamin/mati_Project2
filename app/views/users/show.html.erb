@@ -18,12 +18,14 @@
 
   <table>
 
+    <!-- this should be above the header, right now this markup is broken  -->
     <% @categories.each do |category| %>
     <ul>
       <%= link_to category.name, user_path(current_user, filter: {category_id: category}) %>
     </ul>
     <% end %>
 
+<<<<<<< HEAD
     <tr class = "title">
       <th>Title</th>
       <th>Deadline</th>
@@ -33,6 +35,9 @@
       <th>Description</th>
     </tr>
 
+=======
+    <!-- indentation here is broken -->
+>>>>>>> fcbbbf7e34d72689f58ecc481df6989e2755eb51
     <% @entries.each do |entry|%>
     <tr>
       <td><%=entry.title%></td>
