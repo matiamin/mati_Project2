@@ -2,13 +2,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-.scholarships {
-  color: #595959;
-  position: relative;
-  right: -10px;
-  top: -10px;
-}
+//Index.html.erb page style
 .categories {
   border-spacing: 12px;
   border-collapse: separate;
@@ -41,26 +35,29 @@ button {
   color: #484848;
 }
 
+//Index.html.erb & show.html.erb style
 .container {
   border-color: black;
-  // margin-left: 15px;
 }
 
+//Index.html.erb & show.html.erb style
 .title {
-    width: 850px;
-    height: 40px;
-    border-bottom: 2px solid #E3E3E3;
-    border-top: 2px solid #E3E3E3;
-    th {
-      font-size: 20px;
-      padding: 15px;
-      width: auto;
-      font-family:serif;
-      text-align: center;
-      color: white;
-      background-color: #919999;
-    }
+  width: 850px;
+  height: 40px;
+  border-bottom: 2px solid #E3E3E3;
+  border-top: 2px solid #E3E3E3;
+  th {
+    font-size: 20px;
+    padding: 15px;
+    width: auto;
+    font-family:serif;
+    text-align: center;
+    color: white;
+    background-color: #919999;
+  }
 }
+
+//Index.html.erb & show.html.erb style
 .body {
   height: 100px;
   font-size: 18px;
@@ -72,20 +69,21 @@ button {
     width: auto;
     text-align: center;
   }
-
 }
 
+//Index.html.erb & show.html.erb style
 .author {
-  td {
-    font-size: 12px;
+  td, th {
+    font-size: 13px;
     color: gray;
     font-family: serif;
-    padding: 2px 10px 2px 5px;
+    padding: 5px 0 5px 2px;
+    text-align: center;
   }
-  width: auto;
   border-bottom: 2px solid #E3E3E3;
 }
 
+//Index.html.erb style
 .entry_button {
   position: relative;
   right: -10px;
@@ -108,57 +106,8 @@ button {
 }
 
 // lots of duplication here, you can remove it by doing:
-// .login, .signup, .update, .... {
-//   margin: auto;
-//   text-align: center;
-//   margin-top: 70px;
-//   color:#484848;
-// }
-
-
-.login {
-  margin: auto;
-  text-align: center;
-  margin-top: 70px;
-  color:#484848;
-}
-
-.signup {
-  margin: auto;
-  text-align: center;
-  margin-top: 70px;
-  color:#484848;
-}
-
-.update {
-  margin: auto;
-  text-align: center;
-  margin-top: 70px;
-  color:#484848;
-}
-
-.forgot {
-  margin: auto;
-  text-align: center;
-  margin-top: 70px;
-  color:#484848;
-}
-
-.contact {
-  margin: auto;
-  text-align: center;
-  margin-top: 70px;
-  color:#484848;
-}
-
-.newentry {
-  margin: auto;
-  text-align: center;
-  margin-top: 70px;
-  color:#484848;
-}
-
-.editentry {
+.login, .signup, .update, .update,
+.forgot, .contact, .newentry, .editentry {
   margin: auto;
   text-align: center;
   margin-top: 70px;
@@ -176,17 +125,14 @@ button {
 
 }
 
-// tr {
-//   padding: 10px;
-//   font-size: 12px;
-//   width: 120px;
-// }
+//Index.html.erb style
 .paginate {
   text-align: center;
   position: relative;
   top: 150px;
 }
 
+//show.html.erb style
 .back {
   text-align: center;
   position: relative;
@@ -206,8 +152,9 @@ button {
     background-color: #ffff99;
   }
 }
+
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 1px;
+  list-style-type: none;
+  margin: 0;
+  padding: 1px;
 }

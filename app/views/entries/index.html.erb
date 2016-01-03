@@ -1,60 +1,64 @@
 <div class = "container">
-<h2 class="scholarships"> scholarships </h2>
-<div class="entry_button">
-  <button type="button" class="btn btn-default"><%= link_to 'New Entry', new_entry_path%></button>
-</div>
+  <%#The below button renders the new.html.erb file, which then renders the partial form to allow the user
+  to make a new entry if she is logged in, if not, then the login/signup page shows.%>
+  <div class="entry_button">
+    <button type="button" class="btn btn-default"><%= link_to 'New Entry', new_entry_path%></button>
+  </div>
+  <%#The below code shows all the categories and allows a user to view related entries by clicking on a
+  specific category%>
   <table class = "categories">
-      <tr>
+    <tr>
       <% @categories.each do |category| %>
-        <td><%= link_to category.name, entries_path(filter: {category_id: category}) %></td>
-        <% end %>
-      </tr>
+      <td><%= link_to category.name, entries_path(filter: {category_id: category}) %></td>
+      <% end %>
+    </tr>
   </table>
 
+  <%#Titles row for entries%>
   <table>
     <tr class = "title">
       <th>Title</th>
       <th>Deadline</th>
       <th>Institute</th>
-      <th>Country</th>
-      <th>Website</th>
       <th>Description</th>
-      <th> Visit </th>
-      <th></th>
-      <th></th>
+      <th>Website</th>
+      <th>Country</th>
     </tr>
 
+    <%#The below code shows content of entries and each cell goes in its appropriate table
+    columns under the title's table above%>
     <% @entries.each do |entry|%>
     <tr class="body">
-
       <td><%=entry.title%></td>
       <td><%=entry.deadline%></td>
       <td><%=entry.institute%></td>
-      <td><%=entry.country%></td>
-      <td><a href="<%=entry.website %>"> Link </a></td>
       <td><%=entry.description%></td>
-
-
-      <td><%= link_to 'View', entry_path(entry)%></td>
-
-      <td><% if can? :edit, entry %>
-        <td><%= link_to 'Edit', edit_entry_path(entry)%></td>
-        <%end%>
-      </td>
-
-      <td><% if can? :destroy, entry %>
-        <td><%= link_to 'Delete', entry_path(entry),
-        method: :delete %>
-        <% end%>
-      </td>
-      <tr class= "author">
-        <td colspan="9"><%= entry.created_at.strftime("%B %d, %Y") %> </td><br />
-        <!-- <td><%=link_to entry.user.first_name, user_path(entry.user)%> </td> -->
-      </tr>
+      <td><a href="<%=entry.website %>"> Link </a></td>
+      <td><%=entry.country%></td>
     </tr>
 
+    <tr class="author">
+      <td><%= entry.created_at.strftime("%B %d, %Y") %> </td>
+      <%#Below is link to open entrie in a new page%>
+      <td><%= link_to 'View', entry_path(entry)%></td>
+      <th></th>
+      <th></th>
+
+      <%#Below is the code that allows the user to edit and delete their entries if logged in%>
+      <div>
+        <% if can? :edit, entry %>
+        <td id="edit_link"><%= link_to 'Edit', edit_entry_path(entry)%></td>
+        <%end%>
+        <% if can? :destroy, entry %>
+        <td id="delete_link"><%= link_to 'Delete', entry_path(entry),
+        method: :delete %></td>
+        <% end%>
+      </div>
+
+    </tr>
     <%end%>
   </table>
 
-<div class ="paginate"><%= will_paginate @entries, renderer: BootstrapPagination::Rails %></div>
+  <div class ="paginate"><%= will_paginate @entries, renderer: BootstrapPagination::Rails %></div>
+
 </div>

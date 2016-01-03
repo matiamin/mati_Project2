@@ -1,13 +1,7 @@
 <div class = "editentry">
   <h1>Edit Entry</h1>
-  <!-- no br tags! use CSS instead -->
-  <br />
-  <!-- this form for is broken, and not necessary since you have a form rendered
-      via the partial down below -->
-  <%= form_for :entry, url: entries_path(@entry), method: :path do |f|%>
-
-  <%end%>
-
+  <%#edit.html.erb  is renderd when a logged in user clicks the edit link next to his entries.
+  Then the partial form opens so that the user can edit the selected entry.%>
   <%=render 'form'%>
   <%= link_to 'Back', entries_path%>
 </div>

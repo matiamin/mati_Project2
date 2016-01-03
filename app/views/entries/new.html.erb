@@ -1,10 +1,5 @@
 <div class = "newentry">
-  <h1>New Entry</h1>
-  <br />
-  <!-- another case of a duplicate form that doesn't do anything and should be removed -->
-  <%= form_for :entry, url: entries_path do |f|%>
-  <%end%>
+  <%#The below code renders the partial form that allows a user to make a new entry%>
   <%=render 'form'%>
-
   <%= link_to 'Back', entries_path%>
 </div>
