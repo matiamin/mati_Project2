@@ -4,12 +4,12 @@ class EntriesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   load_and_authorize_resource
-  # this method is not doing anything, so I'd delete it.
+  
   def set_post
   end
 
   def index
-    # nice approach to filtering!
+    #Filtering entries based on categories
     if (params[:filter])
       category = Category.find(params[:filter][:category_id])
       @entries = category.entries
@@ -21,23 +21,24 @@ class EntriesController < ApplicationController
     @categories = Category.all
   end
 
+  #shows specific entry
   def show
     @entry = Entry.find(params[:id])
   end
 
+  #creates new entry
   def new
     @entry = Entry.new
   end
 
   def edit
     @entry = Entry.find(params[:id])
-
   end
 
   def create
     @entry = Entry.new(entry_params)
     @entry.user = current_user
-    # this could be shortened to the line below, though yours is certainly fine too
+    #or the below one line
     # @entry = current_user.entries.build(entry_params)
 
     if @entry.save
@@ -47,6 +48,7 @@ class EntriesController < ApplicationController
     end
   end
 
+  #updates the entry, and redirect to it after successfully updated
   def update
     @entry = Entry.find(params[:id])
     if @entry.update(entry_params)
@@ -56,6 +58,7 @@ class EntriesController < ApplicationController
     end
   end
 
+  #deletes the entry, and redirects to all entries after successfully deletion
   def destroy
     @entry = Entry.find(params[:id])
     @entry.destroy
@@ -63,7 +66,7 @@ class EntriesController < ApplicationController
     redirect_to entries_path
   end
 
-
+  #strong params
   private
   def entry_params
     params.require(:entry).permit(:title, :deadline, :description, :institute, :website, :country, :category_id)

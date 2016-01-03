@@ -1,7 +1,7 @@
 <div class = "container">
 
   <table>
-    <%#Below is the row that shows the title for each column%>
+    <!-- #Below is the row that shows the title for each column -->
     <tr class = "title">
       <th>Title</th>
       <th>Deadline</th>
@@ -12,7 +12,7 @@
     </tr>
 
     <tr class="body">
-      <%#Below is the row that shows content for each cell%>
+      <!-- #Below is the row that shows content for each cell -->
       <td><%=@entry.title%></td>
       <td><%=@entry.deadline%></td>
       <td><%=@entry.institute%></td>
@@ -20,15 +20,15 @@
       <td><a href="<%=@entry.website %>"> Link </a></td>
       <td><%=@entry.country%></td>
     </tr>
-    
-    <%#Below is the code that shows the author of the viewed entry and the date the entry was created%>
+
+    <!-- #Below is the code that shows the author of the viewed entry and the date the entry was created -->
     <tr class="author">
       <td><%= @entry.created_at.strftime("%B %d, %Y") %> </td>
       <th><%= link_to @entry.user.first_name, user_path(@entry.user) %></th>
       <th></th>
       <th></th>
 
-      <%#Below is the code that allows the user to edit and delete their entries if logged in%>
+      <!-- #Below is the code that allows the user to edit and delete their entries if logged in -->
       <div>
         <% if can? :edit, @entry %>
         <td id="edit_link"><%= link_to 'Edit', edit_entry_path(@entry)%></td>
@@ -41,7 +41,7 @@
     </tr>
   </table>
 
-  <%#Below is the back button that takes a visitor back to the index page and shows all the entriesy%>
+  <!-- #Below is the back button that takes a visitor back to the index page and shows all the entriesy -->
   <div class="back">
     <button type="button" class="btn btn-default"><%= link_to 'Back', entries_path%> </button>
   </div>
