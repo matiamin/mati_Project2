@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/entries">Scholarz</a>
+      <a class="navbar-brand" href="/entries"> Scholarz </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,11 +20,11 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-        <button type="button" class="btn btn-lg btn-default"><%= link_to "Update Profile", edit_user_registration_path%></button>
-        <button type="button" class="btn btn-lg btn-default"><%= link_to "Signout", destroy_user_session_path, :method => :delete %></button>
+        <button type="button" class="btn btn-lg btn-success"><%= link_to "Update Profile", edit_user_registration_path%></button>
+        <button type="button" class="btn btn-lg btn-danger"><%= link_to "Signout", destroy_user_session_path, :method => :delete %></button>
         <% else %>
-        <button type="button" class="btn btn-lg btn-default"><%= link_to 'Signup', new_user_registration_path %></button>
-        <button type="button" class="btn btn-lg btn-default"><%= link_to 'Login', new_user_session_path %></button>
+        <button type="button" class="btn btn-lg btn-primary"><%= link_to 'Signup', new_user_registration_path %></button>
+        <button type="button" class="btn btn-lg btn-success"><%= link_to 'Login', new_user_session_path %></button>
         <%end%>
       </ul>
 

@@ -1,17 +1,21 @@
-<div class="contact">
-  <h3>Send A message to Us</h3>
-  <br />
-
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-  <!-- these should all be indented one level-->
-  <%= f.input :name, :required => true %>
-  <br />
-  <%= f.input :email, :required => true %>
-  <br />
-  <%= f.input :message, :as => :text, :required => true %>
-  <div>
-  </br>
-  <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-</div><!-- this indentation is all messed up... hard to read!  -->
-<% end %>
-</div>
+<fieldset>
+  <div class="contact">
+    <h3>Send A message to Us</h3>
+    <br />
+    <table>
+      <tr>
+        <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+        <div><%= f.text_field :name, :placeholder => "Name", :size => "25", :required => true %></div>
+        <br />
+        <div><%= f.text_field :email, :placeholder => "Email", :size => "25", :required => true %></div>
+        <br />
+        <div><%= f.text_field :message, :placeholder => "Message", :size => "25", :as => :text, :required => true %></div>
+      </tr>
+    </table>
+    <div>
+      <br />
+      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</fieldset>

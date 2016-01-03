@@ -1,20 +1,26 @@
-<div class = "forgot">
-  <h2>Forgot your password?</h2>
-  <br />
+<fieldset>
+  <div class = "forgot">
+    <h2>Forgot your password?</h2>
+    <br />
 
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, :placeholder => "Email" %>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, :placeholder => "Email", :size => "27" %>
+    </div>
+    <br />
+
+    <div class="actions">
+      <%= f.submit "Send me reset instructions", :size => "27" %>
+    </div>
+    <br />
+    <% end %>
+    <br />
+    <%= render "devise/shared/links" %>
   </div>
-  <br />
+</fieldset>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-  <br />
-  <% end %>
-  <br />
-  <%= render "devise/shared/links" %>
+<div class="back">
+  <button type="button" class="btn btn-default"><%= link_to 'Back', entries_path%> </button>
 </div>

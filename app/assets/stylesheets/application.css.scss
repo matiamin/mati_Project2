@@ -159,16 +159,17 @@ ul {
   padding: 1px;
 }
 
-//_form.html.erb style
+//_form.html.erb style and devise styles
 fieldset{
   border: 1px solid rgb(255,232,57);
   width: 400px;
   margin:auto;
   padding: 20px;
 }
-
+//_form.html.erb style
 legend {
   border: none;
-  width: 130px;
+  width: 100px;
+  font-size: 30px;
   color: gray;
 }
