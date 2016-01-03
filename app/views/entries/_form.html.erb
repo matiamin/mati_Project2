@@ -15,6 +15,7 @@
     </div>
     <% end %>
 
+    <!-- #form that shows all the text fields for entry  -->
     <p><%= f.collection_select :category_id, Category.all, :id, :name, {prompt: 'Select Category'} %></p>
     <br />
 

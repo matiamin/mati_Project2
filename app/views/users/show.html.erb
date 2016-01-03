@@ -10,15 +10,13 @@
     <%= @user.about %>
   </p>
 
-
   <div class="entry_button">
     <button type="button" class="btn btn-default"><%= link_to 'New Entry', new_entry_path%></button>
   </div>
 
   <table>
-
-    <%#The below code shows all the categories and allows a user to view related entries by clicking on a
-    specific category%>
+    <!-- #The below code shows all the categories and allows a user to view related entries by clicking on a
+    specific category -->
     <table class = "categories">
       <tr>
         <% @categories.each do |category| %>
@@ -27,7 +25,7 @@
       </tr>
     </table>
 
-    <%#Titles row for entries%>
+    <!-- #Titles row for entries -->
     <table>
       <tr class = "title">
         <th>Title</th>
@@ -38,8 +36,8 @@
         <th>Country</th>
       </tr>
 
-      <%#The below code shows content of entries and each cell goes in its appropriate table
-      columns under the title's table above%>
+      <!-- #The below code shows content of entries and each cell goes in its appropriate table
+      columns under the title's table above -->
       <% @entries.each do |entry|%>
       <tr class="body">
         <td><%=entry.title%></td>
@@ -52,12 +50,12 @@
 
       <tr class="author">
         <td><%= entry.created_at.strftime("%B %d, %Y") %> </td>
-        <%#Below is link to open entrie in a new page%>
+        <!-- #Below is link to open entrie in a new page -->
         <td><%= link_to 'View', entry_path(entry)%></td>
         <th></th>
         <th></th>
 
-        <%#Below is the code that allows the user to edit and delete their entries if logged in%>
+        <!-- #Below is the code that allows the user to edit and delete their entries if logged in -->
         <div>
           <% if can? :edit, entry %>
           <td id="edit_link"><%= link_to 'Edit', edit_entry_path(entry)%></td>
@@ -75,6 +73,7 @@
   </div>
 
 <div class="back">
+  <!-- #this buttion redirects back to all the entries  -->
   <button type="button" class="btn btn-default"><%= link_to 'Back', entries_path%> </button>
 </div>
 <div class ="paginate"><%= will_paginate @entries, renderer: BootstrapPagination::Rails %></div>
