@@ -1,9 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1) As a user, I want to be able to login so I can create my own entries.
 
-Things you may want to cover:
+2) As a user, I want to create my entry and assign it to one of the five categories so that others and I
+   can filter it and find scholarships relevant to me.
+
+3) As a user, I want to see all entries so that I can have access to entries by other users, including my own.
+
+4) As a user, I want edit/delete abilities so that I can update or delete my entries later.
+
+5) As a user, I want to be able to update my profile so that I can makes changes if need be.
+
+6) As a user, I want to see when an entry was created so I know how relevant it is.
+
+Features to add later:
+
+7) As a user, I want to filter my search results by country, so that I can find scholarships relevant to me.
+
+8) As a user, I want to filter my search results by author, so that I can find scholarships relevant to me.
+
+9) As a user, I want to filter my search results by institution, so that I can find scholarships relevant to me. 
+
+
+
+Things I need to cover still:
 
 * Ruby version
 
@@ -22,7 +42,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
