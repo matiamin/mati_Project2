@@ -20,7 +20,7 @@
       <td><a href="<%=@entry.website %>"> Link </a></td>
       <td><%=@entry.country%></td>
     </tr>
-
+    
     <%#Below is the code that shows the author of the viewed entry and the date the entry was created%>
     <tr class="author">
       <td><%= @entry.created_at.strftime("%B %d, %Y") %> </td>

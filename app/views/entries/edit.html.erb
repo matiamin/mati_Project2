@@ -1,7 +1,9 @@
 <div class = "editentry">
-  <h1>Edit Entry</h1>
   <%#edit.html.erb  is renderd when a logged in user clicks the edit link next to his entries.
   Then the partial form opens so that the user can edit the selected entry.%>
   <%=render 'form'%>
-  <%= link_to 'Back', entries_path%>
+  <%#Below is the back button that takes a visitor back to the index page and shows all the entriesy%>
+  <div class="back">
+    <button type="button" class="btn btn-default"><%= link_to 'Back', entries_path%> </button>
+  </div>
 </div>
